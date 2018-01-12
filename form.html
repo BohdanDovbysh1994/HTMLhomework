@@ -1,0 +1,49 @@
+<!DOCKTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Form</title>
+    </head>
+    <body>
+        <h1>Full all fields</h1>
+        <form>
+            <div>
+                <input type="text" placeholder="enter text">
+            </div>
+            <div>
+                <input type="email" placeholder="email" required>
+            </div>
+            <div>
+                <input type="date" required>
+            </div>
+            <div>
+                <p>Do you smoke?</p>
+                <select>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div>
+                <textarea placeholder="tell something about yourself" required></textarea>
+            </div>
+            <div>
+                <input type="file">
+            </div>
+            <div>
+                <input type="tel" placeholder="enter your phonenumber">
+            </div>
+                <div>
+                    <p>Select your gender</p>
+                    <input type="radio" name="gender" value="male"> Male<br>
+                    <input type="radio" name="gender" value="female"> Female<br>
+                    <input type="radio" name="gender" value="other"> Other
+                </div>
+            <div>
+                <input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter">
+                <label for="subscribeNews">Subscribe to news letter?</label>
+            </div>
+            <button type="submit" value="Submit" formaction="succsess.html">submit</button>
+            <button type="reset" value="Reset">reset</button>
+        </form>
+    </body>
+</html>
