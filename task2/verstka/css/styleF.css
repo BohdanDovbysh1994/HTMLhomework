@@ -1,0 +1,58 @@
+.flexContainer{
+    display: flex;
+    flex-flow: row wrap;
+}
+.navigation{
+    background-color: aqua;
+    height: 600px;
+    width: 20%;
+    flex-direction: row;
+    
+}
+header{
+    background-color: royalblue;
+    height: 100px;
+    width: 80%;
+}
+.content{
+    padding: 2px 2px;
+    height: 500px;
+    width: 60%;
+    background-color: chartreuse;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+.image{
+    height: 40%;
+    width: 100%;
+    background-color: blueviolet;
+    
+}
+.article{
+    height: 40%;
+    width: 50%;
+    background-color: yellow;
+    border: 4px double black;
+    box-sizing: border-box;
+}
+aside{
+    height: 600px;
+    width: 100%;
+    background-color: coral;
+    text-align: center;
+}
+img{
+    padding: 1px 1px;
+    height: 50%;
+    width: 16.666%;
+    box-sizing: border-box;
+}
+footer{
+    background-color: fuchsia;
+    height: 100px;
+}
+p{
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em;
+}
