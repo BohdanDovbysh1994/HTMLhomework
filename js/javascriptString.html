@@ -1,0 +1,57 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Capitalize</title>
+</head>
+<body>
+  <script>
+  // 1. Написати функцію, скорочує строку і додає три крапки 
+  function truncate(str, maxlength) {
+      var newString = str.substring(0 , maxlength) + "...";
+      console.log(newString);
+  }
+  truncate("Hello my name is Bohdan/ I'an twenty three.", 12);
+  // 2. Знайти кількість букв "а" в речені "Назва Львів дана місту на честь князя Лева Даниловича, сина засновника Львова Данила Галицького." використовуючи indexOf
+function countLetterA(str){
+    var count = 0;
+    for(i = 0; i<= str.length; i++){
+        if(~str.indexOf("а", i)){
+        i = str.indexOf("а", i);
+        count ++;
+            }   
+        }
+    console.log("Number of a is " + count);
+}
+      countLetterA("Назва Львів дана місту на честь князя Лева Даниловича, сина засновника Львова Данила Галицького.");
+  // 3. Написати функцію, яка буде фільтрувати рядок і видиляти слова "xxxx" i "polityka"
+      function filterStr(str){
+          var fiterString = str.replace("xxxx", "");
+          fiterString = fiterString.replace("polityka", "");
+          console.log(fiterString);
+      }
+      filterStr("xxxx wont to go to polityka");
+  // 4. Профільтрувати строку "іва 24 уц ац34434ауку" і виветси тільки цифри
+    function findNumbers(str){
+     var numbers = parseInt(str.replace(/\D+/g,""));
+     console.log(numbers);
+    }
+      findNumbers("іва 24 уц ац34434ауку");
+      
+   //Написати функцію, яка буде виводити символи (включаючи пробыли, цифри) які повторюются в строці  
+      function showSameChar(str){
+      var arr = str.split("");
+      var simbol;
+      arr.sort();
+      for (var i = 0; i < arr.length; i++){
+        if(arr[i] == arr[i+1] && arr[i] != simbol){
+        simbol = arr[i];
+        console.log(arr[i]);
+            }
+          }
+}
+      showSameChar("dsahfjsahf fnhsafba24837583265 dhasgdhasgd fdshfjska 343829");
+  </script>
+</body>
+</html>
