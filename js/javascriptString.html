@@ -26,12 +26,11 @@ function countLetterA(str){
 }
       countLetterA("Назва Львів дана місту на честь князя Лева Даниловича, сина засновника Львова Данила Галицького.");
   // 3. Написати функцію, яка буде фільтрувати рядок і видиляти слова "xxxx" i "polityka"
-      function filterStr(str){
-          var fiterString = str.replace("xxxx", "");
-          fiterString = fiterString.replace("polityka", "");
+  function filterStr(str){
+          var fiterString = str.replace(/(xxxx)|(polityka)/g, "");
           console.log(fiterString);
       }
-      filterStr("xxxx wont to go to polityka");
+      filterStr("xxxx xxxx wxxxxont to go to polityka");
   // 4. Профільтрувати строку "іва 24 уц ац34434ауку" і виветси тільки цифри
     function findNumbers(str){
      var numbers = parseInt(str.replace(/\D+/g,""));
