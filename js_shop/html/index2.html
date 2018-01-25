@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style2.css">
+        <script>
+            window.addEventListener("load", function () {
+                
+                Calculator = function () {
+                    
+                    this.items = [];
+                    
+                    this.totalPrice = 0;
+                    self = this;
+                    this.init = function () {
+                       var a = document.getElementsByClassName('buy');
+                        for (var i = 0; i < a.length; i++) {
+                            a[i].addEventListener("click", getItem);
+                        }
+                    }
+                    
+                    function returnItem (item) {
+                        var container = document.createElement("div");
+                        var header = document.createElement("span");
+                        header.innerHTML += item.name;
+                        var price = document.createElement("span");
+                        price.innerHTML += " " + item.price + "$";
+                        container.appendChild(header);
+                        container.appendChild(price);
+                        return container;
+                    }
+                    
+                    function renderItems () {
+                        var items;
+                        var cart = document.getElementById('list-items');
+                        cart.innerHTML = "";
+                        self.items.map(function (item) {
+                            var container = returnItem(item);
+                            cart.appendChild(container);
+                            document.getElementById('total-price').innerHTML = "Total price " + self.totalPrice + "$";
+                        })
+        
+                    }
+
+                    function getItem (e) {
+                        var price;
+                        var title;
+                        
+                        price = parseInt(e.target.parentElement.previousElementSibling.firstChild.textContent);
+                        var product = e.target.closest('.product').childNodes;
+                        
+                        Array.prototype.map.call(product, function (item) {
+                            if (item.nodeName === "H2") {
+                                title = item.textContent;
+                            }
+                        })
+                                                
+                        self.totalPrice += price;
+                        self.items.push({name: title, price: price});
+                        renderItems();
+                    }
+                }
+                
+                var calculator = new Calculator;
+                calculator.init()
+            })
+            
+            
+        </script>
+    </head>
+    <body>
+        <header></header>
+        <div class="shop">
+            <div class="products">
+                <div class="product">
+                    <div class="image">
+                        <img src="http://www.turist76.ru/uploaded/9/a/9a5c2deaa4033556750c6876a82fb3c0-320.jpg">
+                    </div>
+                    <h2>Speedcross 4W</h2>
+                    <p>Легкие и быстрые кроссовки Salomon Speedcross 4W с идеальной посадкой обеспечат отличное сцепление с поверхностью при любых условиях.</p>
+                    <div>
+                        <div class="price"><p>120$</p></div>
+                        <div class="buy"><button>Buy</button></div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="image">
+                        <img src="https://fitnesmarket.ua/uploads/categories/tzwTa6uiLUZ9zVrxpRXh.jpg">
+                    </div>
+                    <h2>Babolar</h2>
+                    <p>Легкие и быстрые кроссовки Salomon Speedcross 4W с идеальной посадкой обеспечат отличное сцепление с поверхностью при любых условиях.</p>
+                    <div>
+                        <div class="price"><p>140$</p></div>
+                        <div class="buy"><button>Buy</button></div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="image">
+                        <img src="https://redir-img15.allegroimg.com/photos/oryginal/53/08/18/41/5308184114">
+                    </div>
+                    <h2>ADIDAS CC FRESH</h2>
+                    <p>Легкие и быстрые кроссовки Salomon Speedcross 4W с идеальной посадкой обеспечат отличное сцепление с поверхностью при любых условиях.</p>
+                    <div>
+                        <div class="price"><p>160$</p></div>
+                        <div class="buy"><button>Buy</button></div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="image">
+                        <img src="https://proreyting.ru/wp-content/cache/thumb/30fd48d81_320x200.jpg">
+                    </div>
+                    <h2>Nike Air Zoom Pegasus 34</h2>
+                    <p>Самые стильные кроссовки. Единственное, на что можно рассчитывать говоря о Nike — что это стильная пара кроссовок, и Air Zoom Pegasus 34 не исключение.</p>
+                    <div>
+                        <div class="price"><p>180$</p></div>
+                        <div class="buy"><button>Buy</button></div>
+                    </div>
+                </div>
+            </div>
+            <div id="cart" class="cart">
+                <div id="list-items"></div>
+                <div><span id="total-price"> Basket is empty </span> </div>
+            </div>
+        </div>
+        <footer></footer>
+    </body>
+</html>
